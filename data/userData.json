@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Bilal Hassen",
+    "email": "bullyb97@gmail.com",
+    "weight": "super welterweight",
+    "location": "Ontario",
+    "experience": "advanced"
+  },
+  {
+    "name": "Khabib",
+    "email": "eaglefc@gmail.com",
+    "weight": "light Heavyweigth",
+    "location": "Ontario",
+    "experience": "pro"
+  },
+  {
+    "name": "Tony Fergurson",
+    "email": "fergie84@gmail.com",
+    "weight": "light Heavyweigth",
+    "location": "Ontario",
+    "experience": "intermediate"
+  },
+  {
+    "name": "Jon Jones ",
+    "email": "fergie84@gmail.com",
+    "weight": "light Heavyweigth",
+    "location": "Ontario",
+    "experience": "pro"
+  }
+]
