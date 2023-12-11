@@ -26,14 +26,14 @@ function postUserData(data) {
 
 router.get("/", (req, res) => {
   const userData = readDefaultData();
-  console.log({ userData });
+  // console.log({ userData });
   res.send(userData);
 });
 
 router.post("/", (req, res) => {
   //store the first array in a userdata variable
   const userData = readUserData();
-  console.log(userData);
+  // console.log(userData);
   // new user object to be added to the data file
   const newUser = {
     id: newUserId(),
@@ -43,13 +43,48 @@ router.post("/", (req, res) => {
     location: req.body.location,
     experience: req.body.experience,
   };
-  // add the new user from the front end to the data file
-  userData[0].push(newUser);
-  // change the sent over data to a js object
-  // and write it to the data file
-  postUserData(userData);
 
-  res.status(201).json(newUser);
+  let existingUser = userData[0].find((user) => user.email === newUser.email);
+  console.log({ existingUser });
+
+  if (existingUser) {
+    // sends a 200 the request has succeeded
+    res.status(200).json(existingUser);
+  } else {
+    // add the new user from the front end to the data file
+    userData[0].push(newUser);
+    // change the sent over data to a js object
+    // and write it to the data file
+    postUserData(userData);
+
+    // send a 201 indicating the success and creation of a user
+    res.status(201).json(newUser);
+  }
+});
+
+router.get("/:id", (req, res) => {
+  // use req.params to get the id from the url parameter
+  const { id } = req.params;
+  // console.log({ id });
+
+  let userData = readUserData();
+
+  let users = userData[0];
+
+  let newUser = users.find((user) => user.id === id);
+  console.log(newUser.id);
+
+  let opponent = users.filter(
+    (opponent) =>
+      opponent.weight === newUser.weight &&
+      opponent.experience === newUser.experience
+  );
+  let filteredOpponent = opponent.filter(
+    (opponent) => opponent.id !== newUser.id
+  );
+
+  console.log({ filteredOpponent });
+  res.json(filteredOpponent);
 });
 
 module.exports = router;
