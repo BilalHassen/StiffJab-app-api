@@ -44,6 +44,8 @@ router.post("/", (req, res) => {
     experience: req.body.experience,
   };
 
+  // checks if the user already exists in the data
+  // based on the provided email
   let existingUser = userData[0].find((user) => user.email === newUser.email);
   console.log({ existingUser });
 
@@ -65,20 +67,25 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   // use req.params to get the id from the url parameter
   const { id } = req.params;
-  // console.log({ id });
 
+  // assign data to the user data variable
   let userData = readUserData();
 
+  //extract only the user data from the entire data file and assign it to users
   let users = userData[0];
 
+  // find the new user id from the user data
   let newUser = users.find((user) => user.id === id);
   console.log(newUser.id);
 
+  // filter opponents based weight and experience
   let opponent = users.filter(
     (opponent) =>
       opponent.weight === newUser.weight &&
       opponent.experience === newUser.experience
   );
+  // filter out the new user
+  // so they wont have themselves as an opponent
   let filteredOpponent = opponent.filter(
     (opponent) => opponent.id !== newUser.id
   );
