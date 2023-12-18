@@ -26,8 +26,6 @@ router.post("/", (req, res) => {
     text: `${req.body.name} email: ${req.body.email} message: ${req.body.message}`,
   };
 
-  console.log({ mailData });
-
   transporter.sendMail(mailData, (error, info) => {
     if (error) {
       return res.status(500).send(error);

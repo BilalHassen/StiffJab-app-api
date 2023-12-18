@@ -47,7 +47,6 @@ router.post("/", (req, res) => {
   // checks if the user already exists in the data
   // based on the provided email
   let existingUser = userData[0].find((user) => user.email === newUser.email);
-  console.log({ existingUser });
 
   if (existingUser) {
     // sends a 200 the request has succeeded
@@ -76,7 +75,6 @@ router.get("/:id", (req, res) => {
 
   // find the new user id from the user data
   let newUser = users.find((user) => user.id === id);
-  console.log(newUser.id);
 
   // filter opponents based weight and experience
   let opponent = users.filter(
@@ -90,7 +88,6 @@ router.get("/:id", (req, res) => {
     (opponent) => opponent.id !== newUser.id
   );
 
-  console.log({ filteredOpponent });
   res.json(filteredOpponent);
 });
 

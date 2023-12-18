@@ -431,6 +431,38 @@
       "weight": "heavyweight 200+ pounds",
       "location": "Ontario",
       "experience": "pro"
+    },
+    {
+      "id": "3sb7rp1zlq6zul3c",
+      "name": "caleb plant",
+      "email": "calebplant@outlook.com",
+      "weight": "super welterweight 154-159 pounds",
+      "location": "Ontario",
+      "experience": "advanced"
+    },
+    {
+      "id": "3sb7rp1zlqa1shr7",
+      "name": "Canelo Alvarez",
+      "email": "alvarez@outlook.com",
+      "weight": "heavyweight 200+ pounds",
+      "location": "Ontario",
+      "experience": "pro"
+    },
+    {
+      "id": "3sb7rp1zlqa1smts",
+      "name": "Rich Piana",
+      "email": "5%er@gmail.com",
+      "weight": "heavyweight 200+ pounds",
+      "location": "Ontario",
+      "experience": "pro"
+    },
+    {
+      "id": "3sb7rp1zlqa317rc",
+      "name": "Genady Golovkin",
+      "email": "ggg@gmail.com",
+      "weight": "heavyweight 200+ pounds",
+      "location": "Ontario",
+      "experience": "pro"
     }
   ],
   [
