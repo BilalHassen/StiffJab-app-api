@@ -6,7 +6,8 @@
 ## Email Configuration 
 - StiffJab API uses nodemailer to send emails. To enable this functionality you will need to set up your own email credentials following these steps:
 - Add a `.env` file to the root
--    ```env
+    ```env
    EMAIL_USER="youremail@example.com"
    EMAIL_PASSWORD="yourpassword"
+
 - NOTE: the email password is a google generated app password. 
